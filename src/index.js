@@ -28,6 +28,13 @@ export function domOpsMixin(proto){
         },
         prepend(...elements){
             return this.insert('afterbegin', ...elements);
+        },
+        empty(){
+            this.element.innerHTML = '';
+            return this;
+        },
+        fill(...contents){
+            return this.empty().append(...contents);
         }
     });
 }

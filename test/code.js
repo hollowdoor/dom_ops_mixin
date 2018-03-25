@@ -266,6 +266,19 @@ function domOpsMixin(proto){
 
             return (ref = this).insert.apply(ref, [ 'afterbegin' ].concat( elements ));
             var ref;
+        },
+        empty: function empty(){
+            this.element.innerHTML = '';
+            return this;
+        },
+        fill: function fill(){
+            var arguments$1 = arguments;
+
+            var contents = [], len = arguments.length;
+            while ( len-- ) { contents[ len ] = arguments$1[ len ]; }
+
+            return (ref = this.empty()).append.apply(ref, contents);
+            var ref;
         }
     });
 }
@@ -280,6 +293,10 @@ var list = new List().appendTo(document.body);
 
 list.append('<li>Item 1</li>');
 list.append('<li>Item 2</li>');
+
+setTimeout(function (){
+    list.fill("<li>Fill 1</li><li>Fill 2</li>");
+}, 3000);
 
 }());
 //# sourceMappingURL=code.js.map

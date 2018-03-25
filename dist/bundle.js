@@ -43,6 +43,17 @@ function domOpsMixin(proto){
 
             return (ref = this).insert.apply(ref, [ 'afterbegin' ].concat( elements ));
             var ref;
+        },
+        empty: function empty(){
+            this.element.innerHTML = '';
+            return this;
+        },
+        fill: function fill(){
+            var contents = [], len = arguments.length;
+            while ( len-- ) contents[ len ] = arguments[ len ];
+
+            return (ref = this.empty()).append.apply(ref, contents);
+            var ref;
         }
     });
 }

@@ -75,6 +75,14 @@ Append the `elements` to `this.element`.
 
 Adds the `elements` at the beginning of `this.element`.
 
+### proto.empty()
+
+Empty the contents (children) of the element.
+
+### proto.fill(...contents)
+
+Fill `this.element` with `contents`.
+
 About
 ---
 

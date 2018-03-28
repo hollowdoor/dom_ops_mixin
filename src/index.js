@@ -14,7 +14,7 @@ export function domOpsMixin(proto){
             return this.insertAt('beforeend', parent);
         },
         remove(element){
-            if(element === void 0){
+            if(element !== void 0){
                 return this.element.removeChild(element);
             }
             let parent = this.element.parentNode;

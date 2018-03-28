@@ -240,7 +240,7 @@ function domOpsMixin(proto){
             return this.insertAt('beforeend', parent);
         },
         remove: function remove(element){
-            if(element === void 0){
+            if(element !== void 0){
                 return this.element.removeChild(element);
             }
             var parent = this.element.parentNode;
